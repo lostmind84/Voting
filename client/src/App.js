@@ -1,6 +1,5 @@
 import React, { useEffect, useState, Fragment } from "react";
 import VotingContract from "./contracts/Voting.json";
-import getWeb3 from "./getWeb3";
 import Web3 from "web3";
 
 // internal components
@@ -29,7 +28,7 @@ function App() {
 
       // Use web3 to get the user's accounts.
       const accounts = await web3.eth.getAccounts();
-      //console.log(accounts);
+
       // Get the contract instance.
       const networkId = await web3.eth.net.getId();
       const deployedNetwork = VotingContract.networks[networkId];
