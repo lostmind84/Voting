@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/Developpeur-Ethereum-Template/static/css/main.b100e6da.chunk.css",
+    "main.js": "/Developpeur-Ethereum-Template/static/js/main.fb83ceaf.chunk.js",
+    "main.js.map": "/Developpeur-Ethereum-Template/static/js/main.fb83ceaf.chunk.js.map",
+    "runtime-main.js": "/Developpeur-Ethereum-Template/static/js/runtime-main.9ae799f3.js",
+    "runtime-main.js.map": "/Developpeur-Ethereum-Template/static/js/runtime-main.9ae799f3.js.map",
+    "static/css/2.429e79c4.chunk.css": "/Developpeur-Ethereum-Template/static/css/2.429e79c4.chunk.css",
+    "static/js/2.541bb8ed.chunk.js": "/Developpeur-Ethereum-Template/static/js/2.541bb8ed.chunk.js",
+    "static/js/2.541bb8ed.chunk.js.map": "/Developpeur-Ethereum-Template/static/js/2.541bb8ed.chunk.js.map",
+    "index.html": "/Developpeur-Ethereum-Template/index.html",
+    "precache-manifest.b9d2e835c9f66d6300e43e7c9abdb095.js": "/Developpeur-Ethereum-Template/precache-manifest.b9d2e835c9f66d6300e43e7c9abdb095.js",
+    "service-worker.js": "/Developpeur-Ethereum-Template/service-worker.js",
+    "static/css/2.429e79c4.chunk.css.map": "/Developpeur-Ethereum-Template/static/css/2.429e79c4.chunk.css.map",
+    "static/css/main.b100e6da.chunk.css.map": "/Developpeur-Ethereum-Template/static/css/main.b100e6da.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9ae799f3.js",
+    "static/css/2.429e79c4.chunk.css",
+    "static/js/2.541bb8ed.chunk.js",
+    "static/css/main.b100e6da.chunk.css",
+    "static/js/main.fb83ceaf.chunk.js"
+  ]
+}
