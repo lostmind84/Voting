@@ -4,6 +4,7 @@ import { Row, Col, Badge, Card } from "react-bootstrap";
 const HeaderComponent = (props) => {
   const context = props.context;
   const [owner, setOwner] = useState("");
+  const [winningProp, setWinningProp] = useState(null);
   const [currentWallet, setCurrentWallet] = useState("");
   const currentStatus = props.currentStatus;
   const setCurrentStatus = props.setCurrentStatus;
@@ -11,6 +12,7 @@ const HeaderComponent = (props) => {
   useEffect(() => {
     getOwner();
     getStatus();
+    getWinner();
 
     setCurrentWallet(
       `${context.accounts[0].substring(0, 5)}...${context.accounts[0].substring(
@@ -40,6 +42,17 @@ const HeaderComponent = (props) => {
     else if (currentStatus === 5) return "Vote tallied (7.)";
   };
 
+  const getWinner = async () => {
+    if (currentStatus === 5) {
+      const id = await context.contract.methods.winningProposalId().call();
+      if (id) {
+        const wProp = await context.contract.methods.getWinner().call();
+        wProp.id = id;
+        setWinningProp(wProp);
+      }
+    }
+  };
+
   return (
     <Row className="mt-2">
       <Col></Col>
@@ -60,6 +73,11 @@ const HeaderComponent = (props) => {
             <h4>
               <Badge variant="info">{getStatusText()}</Badge>
             </h4>
+            <div>
+              {winningProp !== null
+                ? `Winning proposal is ID=${winningProp.id}`
+                : ""}
+            </div>
           </Card.Body>
         </Card>
       </Col>

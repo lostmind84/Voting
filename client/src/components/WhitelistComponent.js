@@ -41,9 +41,9 @@ const WhitelistComponent = (props) => {
   }
 
   useEffect(() => {
-    subscribe();
+    if (voterAdded === false) subscribe();
     setvoterAdded(false);
-  }, [voterAdded]);
+  }, [voterAdded, context]);
 
   const addToWhitelist = async (event) => {
     try {
@@ -56,18 +56,25 @@ const WhitelistComponent = (props) => {
   };
 
   const getButton = () => {
-    if (currentStatus === 0)
+    if (currentStatus === 0 && context.contractOwner === context.accounts[0])
       return (
         <Button variant="primary" onClick={addToWhitelist}>
           Add
         </Button>
       );
-    else
+    else if (context.contractOwner !== context.accounts[0])
+      return (
+        <Button variant="secondary" onClick={addToWhitelist} disabled>
+          (Only owner)
+        </Button>
+      );
+    else {
       return (
         <Button variant="secondary" onClick={addToWhitelist} disabled>
           Add
         </Button>
       );
+    }
   };
 
   return (

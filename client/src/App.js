@@ -18,6 +18,7 @@ function App() {
     web3: null,
     accounts: null,
     contract: null,
+    contractOwner: null,
   });
   const [currentStatus, setCurrentStatus] = useState("");
 
@@ -37,7 +38,14 @@ function App() {
         deployedNetwork && deployedNetwork.address
       );
 
-      setContext({ web3: web3, accounts: accounts, contract: instance });
+      const contractOwner = await instance.methods.owner().call();
+
+      setContext({
+        web3: web3,
+        accounts: accounts,
+        contract: instance,
+        contractOwner: contractOwner,
+      });
     } catch (error) {
       // Catch any errors for any of the above operations.
       alert(

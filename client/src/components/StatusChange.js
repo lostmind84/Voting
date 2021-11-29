@@ -53,18 +53,28 @@ const StatusChange = (props) => {
   };
 
   const getButton = () => {
-    if (initialStatus !== currentStatus)
-      return (
-        <Button variant="secondary" onClick={changeStatus} disabled>
-          Change status
-        </Button>
-      );
-    else
+    if (
+      initialStatus === currentStatus &&
+      context.contractOwner === context.accounts[0]
+    )
       return (
         <Button variant="primary" onClick={changeStatus}>
           Change status
         </Button>
       );
+    else if (context.contractOwner !== context.accounts[0])
+      return (
+        <Button variant="secondary" onClick={changeStatus} disabled>
+          (Only owner)
+        </Button>
+      );
+    else {
+      return (
+        <Button variant="secondary" onClick={changeStatus} disabled>
+          Not available
+        </Button>
+      );
+    }
   };
 
   return (

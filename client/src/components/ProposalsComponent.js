@@ -77,7 +77,7 @@ const ProposalsComponent = (props) => {
     else
       return (
         <Button variant="secondary" onClick={addProposal} disabled>
-          Register
+          Not available
         </Button>
       );
   };
