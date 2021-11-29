@@ -24036,6 +24036,12 @@
     "version": "0.8.9+commit.e5eed63a.Emscripten.clang"
   },
   "networks": {
+    "3": {
+      "events": {},
+      "links": {},
+      "address": "0x3c98C6f91bbCd1ae7bC088d48dc80b60140D0bF3",
+      "transactionHash": "0x99e9e48a85426ecdcc732c364d6e22378c0843a3da91bb881ca3305d38fdf94c"
+    },
     "1637951105881": {
       "events": {},
       "links": {},
@@ -24260,7 +24266,7 @@
     }
   },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-11-29T15:21:59.770Z",
+  "updatedAt": "2021-11-29T15:37:35.993Z",
   "networkType": "ethereum",
   "devdoc": {
     "author": "Fabien Frick",
