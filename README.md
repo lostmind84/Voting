@@ -50,7 +50,9 @@ npm run start
 
 ## Contracts testing
 
-Run :
+Open a terminal and start a `ganache-cli`
+
+In a new terminal run :
 
 ```sh
 truffle test
